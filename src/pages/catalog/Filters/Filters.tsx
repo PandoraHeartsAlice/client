@@ -19,8 +19,9 @@ export const Filters: React.FC = () => {
 
   const [filtersData, setFiltersData] = useState<DataStructureFilters[]>([]);
   useEffect(() => {
+    const apiUrl = import.meta.env.VITE_API_URL;
     axios
-      .get("/api/filters")
+      .get(`${apiUrl}/filters`)
       .then((response) => {
         // Assuming the server response wraps the array in a `filters` property
         setFiltersData(response.data);

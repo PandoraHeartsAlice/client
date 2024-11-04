@@ -13,8 +13,9 @@ export const Wire = () => {
   });
 
   useEffect(() => {
+    const apiUrl = import.meta.env.VITE_API_URL;
     axios
-      .get("/api/wires")
+      .get(`${apiUrl}/wires`)
       .then((response) => {
         console.log("Ответ сервера:", response.data); // Добавлено логирование ответа
         // Проверка, что response.data является массивом

@@ -13,8 +13,9 @@ import style from "./SliderCatalog.module.css";
 export const SliderCatalog: React.FC = () => {
   const [filtersData, setFiltersData] = useState<DataStructureFilters[]>([]);
   useEffect(() => {
+    const apiUrl = import.meta.env.VITE_API_URL;
     axios
-      .get("/api/filters")
+      .get(`${apiUrl}/filters`)
       .then((response) => {
         setFiltersData(response.data);
       })

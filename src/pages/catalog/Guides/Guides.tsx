@@ -8,8 +8,9 @@ export const Guides = () => {
   const [guides, setGuides] = useState<DataStructureGuides[]>([]);
 
   useEffect(() => {
+    const apiUrl = import.meta.env.VITE_API_URL;
     axios
-      .get("/api/guides")
+      .get(`${apiUrl}/guides`)
       .then((response) => {
         // Предполагается, что ответ содержит массив направляющих в свойстве data
         setGuides(response.data);

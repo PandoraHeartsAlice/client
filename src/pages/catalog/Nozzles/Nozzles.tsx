@@ -8,8 +8,9 @@ export const Nozzles = () => {
   const [nozzles, setNozzles] = useState<DataStructureNozzles[]>([]);
 
   useEffect(() => {
+    const apiUrl = import.meta.env.VITE_API_URL;
     axios
-      .get("/api/nozzles")
+      .get(`${apiUrl}/nozzles`)
       .then((response) => {
         // Предполагается, что ответ содержит массив соплов в свойстве data
         setNozzles(response.data);

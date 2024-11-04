@@ -8,8 +8,9 @@ export const Brushes = () => {
   const [brushes, setBrushes] = useState<DataStructureBrushes[]>([]);
 
   useEffect(() => {
+    const apiUrl = import.meta.env.VITE_API_URL;
     axios
-      .get("/api/brushes")
+      .get(`${apiUrl}/brushes`)
       .then((response) => {
         // Предполагается, что ответ содержит массив кистей в свойстве data
         const formattedBrushes: DataStructureBrushes[] = response.data.map(

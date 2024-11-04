@@ -10,8 +10,9 @@ export const Resin = () => {
   const [resins, setResins] = useState([]);
 
   useEffect(() => {
+    const apiUrl = import.meta.env.VITE_API_URL;
     axios
-      .get("/api/resins")
+      .get(`${apiUrl}/resins`)
       .then((response) => {
         setResins(response.data);
       })
