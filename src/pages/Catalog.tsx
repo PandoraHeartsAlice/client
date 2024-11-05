@@ -15,42 +15,42 @@ export const Catalog = () => {
           <li className="catalog__li">
             <LinkCard
               title="ФИЛЬТРА"
-              image="../public/img/filters.png"
+              image="/img/filters.png"
               path="/catalog/filters"
             />
           </li>
           <li className="catalog__li">
             <LinkCard
               title="СМОЛА"
-              image="../public/img/resin.jpg"
+              image="/img/resin.jpg"
               path="/catalog/resin"
             />
           </li>
           <li className="catalog__li">
             <LinkCard
               title="ПРОВОЛОКА"
-              image="../public/img/wire.jpg"
+              image="/img/wire.jpg"
               path="/catalog/wire"
             />
           </li>
           <li className="catalog__li">
             <LinkCard
               title="СОПЛА"
-              image="../public/img/nozzles.jpg"
+              image="/img/nozzles.jpg"
               path="/catalog/nozzles"
             />
           </li>
           <li className="catalog__li">
             <LinkCard
               title="КОНТ. ЩЕТКИ"
-              image="../public/img/brushes.png"
+              image="/img/brushes.png"
               path="/catalog/brushes"
             />
           </li>
           <li className="catalog__li">
             <LinkCard
               title="НАПРАВЛЯЮЩИЕ"
-              image="../public/img/guides.jpg"
+              image="/img/guides.jpg"
               path="/catalog/guides"
             />
           </li>
