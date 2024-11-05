@@ -18,29 +18,33 @@ import { Guides } from "./pages/catalog/Guides/Guides.tsx";
 
 import { BasketProvider } from "./components/Context/BasketContext.tsx";
 
+import { ProtectedRoute } from "./pages/ProtectedRoute.tsx";
+
 export const App = () => {
   return (
     <>
       <BasketProvider>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Catalog />} />
-            <Route path="catalog/*" element={<Catalog />}>
-              <Route index element={<SliderCatalog />} />
-              <Route path="filters" element={<Filters />} />
-              <Route path="resin" element={<Resin />} />
-              <Route path="wire" element={<Wire />} />
-              <Route path="brushes" element={<Brushes />} />
-              <Route path="nozzles" element={<Nozzles />} />
-              <Route path="guides" element={<Guides />} />
+        <ProtectedRoute>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<Catalog />} />
+              <Route path="catalog/*" element={<Catalog />}>
+                <Route index element={<SliderCatalog />} />
+                <Route path="filters" element={<Filters />} />
+                <Route path="resin" element={<Resin />} />
+                <Route path="wire" element={<Wire />} />
+                <Route path="brushes" element={<Brushes />} />
+                <Route path="nozzles" element={<Nozzles />} />
+                <Route path="guides" element={<Guides />} />
+                <Route path="*" element={<NoMatch />} />
+              </Route>
+              <Route path="about" element={<AboutUs />} />
+              <Route path="stock" element={<Stock />} />
+              <Route path="basket" element={<Basket />} />
               <Route path="*" element={<NoMatch />} />
             </Route>
-            <Route path="about" element={<AboutUs />} />
-            <Route path="stock" element={<Stock />} />
-            <Route path="basket" element={<Basket />} />
-            <Route path="*" element={<NoMatch />} />
-          </Route>
-        </Routes>
+          </Routes>
+        </ProtectedRoute>
       </BasketProvider>
     </>
   );

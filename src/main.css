@@ -1,7 +1,7 @@
 @font-face {
   font-family: "InterRegular";
   src: local("InterRegular"),
-   url("./fonts/Inter/Inter-Regular.ttf") format("truetype");
+    url("./fonts/Inter/Inter-Regular.ttf") format("truetype");
   font-weight: normal;
 }
 
@@ -13,4 +13,45 @@
   --text-color-secondary: #999;
   --price-color: #f00;
   --font-family-main: "InterRegular";
+}
+
+.protected-route {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+  text-align: center;
+}
+
+.protected-route h1 {
+  margin-bottom: 20px;
+}
+
+.protected-route form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.protected-route input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.buttonstylein {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.protected-route button:hover {
+  background-color: #0056b3;
 }
