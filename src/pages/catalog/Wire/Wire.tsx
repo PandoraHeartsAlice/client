@@ -17,12 +17,10 @@ export const Wire = () => {
     axios
       .get(`${apiUrl}/wires`)
       .then((response) => {
-        console.log("Ответ сервера:", response.data); // Добавлено логирование ответа
-        // Проверка, что response.data является массивом
+        console.log("Ответ сервера:", response.data);
         if (Array.isArray(response.data)) {
           setWires(response.data);
         } else {
-          // Обработка случая, когда response.data не массив
           console.error(
             "Полученные данные не являются массивом:",
             response.data
@@ -34,7 +32,7 @@ export const Wire = () => {
       });
 
     axios
-      .get("/api/coils")
+      .get(`${apiUrl}/coils`)
       .then((response) => {
         setCoils(response.data);
       })
