@@ -7,6 +7,8 @@ import {
 import style from "./Basket.module.css";
 import ProductDetails from "./ProductDetails";
 
+import axios from "axios";
+
 export const Basket = () => {
   const [showDeletePromptForId, setShowDeletePromptForId] = useState<
     string | null
@@ -76,18 +78,8 @@ export const Basket = () => {
 
   const submitOrder = async (orderData: OrderData) => {
     try {
-      const response = await fetch(`${apiUrl}/submit`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(orderData),
-      });
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      const data = await response.json();
-      console.log(data);
+      const response = await axios.post(`${apiUrl}/submit`, orderData);
+      console.log(response.data);
     } catch (error) {
       console.error("Ошибка при отправке заказа:", error);
     }
