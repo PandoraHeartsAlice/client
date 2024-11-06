@@ -72,9 +72,11 @@ export const Basket = () => {
     total: number;
   }
 
+  const apiUrl = import.meta.env.VITE_API_URL;
+
   const submitOrder = async (orderData: OrderData) => {
     try {
-      const response = await fetch("/api/submit", {
+      const response = await fetch(`${apiUrl}/submit`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
